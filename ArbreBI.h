@@ -21,9 +21,8 @@ private:
     Noeud*  GetNoeudPrivee(int cle, Noeud* Ptr);
     int     TrouverPlusPetiteClePrivee(Noeud* Ptr);
     int     TrouverPlusGrandeClePrivee(Noeud* Ptr);
-    int     Mirror(Noeud* Ptr);
-
-
+    //Noeud*  DeleteNodeInBSTPrivee(Noeud* root,int data);
+    Noeud*  deleteNode(Noeud* root, int k);
 public:
     Arbre();
     Noeud*  CreerFeuille(int cle);
@@ -34,8 +33,8 @@ public:
     void  AfficherEnfants(int cle);
     int   TrouverPlusPetiteCle();
     int   TrouverPlusGrandeCle();
-    void  InverserArbre();
-
+    //Noeud*  DeleteNodeInBST(int data);
+    //Noeud* deleteNode(Noeud* root,int k);
     //~Arbre();
 
 

@@ -6,8 +6,7 @@ using namespace std;
 
 int main(){
     int monTableau [16]={51, 77, 22, 5, 16, 33, 65, 53, 15, 101, 84, 3, 4, 71, 88, 81};
-    Arbre arbre,arbre_test,arbre_inv;
-
+    Arbre arbre;
 
     for (int i= 0; i<16; i++){
         arbre.AjouterNoeud(monTableau[i]);
@@ -23,14 +22,10 @@ int main(){
     cout<< "La plus petite cle dans l'arbre est: " << arbre.TrouverPlusPetiteCle()<< endl;
 
     cout<< "La plus grande cle dans l'arbre est: " << arbre.TrouverPlusGrandeCle()<< endl;
-   /* int tab_test[7]={5,7,4,6,9,10,8};
 
-        for (int i= 0; i<7; i++){
-        arbre_test.AjouterNoeud(tab_test[i]);
-    }*/
+    arbre.deleteNode(arbre.root,84);
     arbre.AfficherArbre();
-    arbre.InverserArbre();
-    cout << "\n------------------Mirror----------------------------------------------------------" << endl;
-    arbre.AfficherArbre();
+    cout << endl;
+    //***********************************
     return 0;
 }
