@@ -149,19 +149,23 @@ int Arbre::TrouverPlusGrandeClePrivee(Noeud* Ptr){
         }
     }
 }
-Arbre::Noeud* Arbre::deleteNode(Noeud* root, int key) {
+
+void Arbre::deleteNode(int key){
+    deleteNodeP(root,key);
+}
+Arbre::Noeud* Arbre::deleteNodeP(Noeud* root, int key) {
     // base case
     if (root == NULL) return root;
 
     // If the key to be deleted is smaller than the root's key,
     // then it lies in left subtree
     if (key < root->cle)
-        root->gauche = deleteNode(root->gauche, key);
+        root->gauche = deleteNodeP(root->gauche, key);
 
     // If the key to be deleted is greater than the root's key,
     // then it lies in right subtree
     else if (key > root->cle)
-        root->droite = deleteNode(root->droite, key);
+        root->droite = deleteNodeP(root->droite, key);
 
     // if key is same as root's key, then This is the node
     // to be deleted
@@ -189,7 +193,7 @@ Arbre::Noeud* Arbre::deleteNode(Noeud* root, int key) {
         root->cle = temp->cle;
 
         // Delete the inorder successor
-        root->droite = deleteNode(root->droite, temp->cle);
+        root->droite = deleteNodeP(root->droite, temp->cle);
     }
     return root;
 }

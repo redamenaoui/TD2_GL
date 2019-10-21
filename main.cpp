@@ -23,7 +23,9 @@ int main(){
 
     cout<< "La plus grande cle dans l'arbre est: " << arbre.TrouverPlusGrandeCle()<< endl;
 
-    arbre.deleteNode(arbre.root,84);
+    arbre.deleteNode(84);
+    arbre.deleteNode(101);
+    arbre.deleteNode(65);
     arbre.AfficherArbre();
     cout << endl;
     //***********************************
