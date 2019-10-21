@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "ArbreBI.h"
-
+#include "ArbreBI.cpp"
 using namespace std;
 
 int main(){
@@ -21,7 +21,7 @@ int main(){
 
     cout<< "La plus petite cle dans l'arbre est: " << arbre.TrouverPlusPetiteCle()<< endl;
 
-    cout<< "La plus grande cle dans l'arbre est: " << arbre.FindMax()<< endl;
+    cout<< "La plus grande cle dans l'arbre est: " << arbre.TrouverPlusGrandeCle()<< endl;
 
     return 0;
 }

@@ -131,51 +131,21 @@ int Arbre::TrouverPlusPetiteClePrivee(Noeud* Ptr){
         }
     }
 }
-Noeud* Arbre::FindMax(Noeud* root){
-    if(root==NULL)
-    return NULL;
-
-    while(root->right != NULL)
-    {
-        root = root->right;
-    }
-    return root;
+int Arbre::TrouverPlusGrandeCle(){
+   return TrouverPlusGrandeClePrivee(root);
 }
-Noeud* DeleteNodeInBST(Noeud* root,int data)
-{
-    if(root==NULL) return root;
-    else if(data<root->data)
-        root->left = DeleteNodeInBST(root->left, data);
-    else if (data> root->data)
-        root->right = DeleteNodeInBST(root->right, data);
-    else
-    {
-        //No child
-        if(root->right == NULL && root->left == NULL)
-        {
-            delete root;
-            root = NULL;
+
+int Arbre::TrouverPlusGrandeClePrivee(Noeud* Ptr){
+    if (root == NULL){
+        cout << "l arbre est vide.... \n" ;
+        return -999;
+    }
+    else {
+        if(Ptr->droite !=NULL){
+            return TrouverPlusGrandeClePrivee(Ptr->droite);
         }
-        //One child
-        else if(root->right == NULL)
-        {
-            Node* temp = root;
-            root= root->left;
-            delete temp;
-        }
-        else if(root->left == NULL)
-        {
-            Node* temp = root;
-            root= root->right;
-            delete temp;
-        }
-        //two child
-        else
-        {
-            Node* temp = FindMax(root->left);
-            root->data = temp->data;
-            root->left = DeleteNodeInBST(root->left, temp->data);
+        else {
+            return Ptr->cle;
         }
     }
-    return root;
 }

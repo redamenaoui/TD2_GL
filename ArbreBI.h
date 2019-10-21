@@ -20,6 +20,7 @@ private:
     void    AfficherArbrePrivee(Noeud* Ptr);
     Noeud*  GetNoeudPrivee(int cle, Noeud* Ptr);
     int     TrouverPlusPetiteClePrivee(Noeud* Ptr);
+    int     TrouverPlusGrandeClePrivee(Noeud* Ptr);
 
 
 public:
@@ -31,6 +32,7 @@ public:
     int   GetCleRoot();
     void  AfficherEnfants(int cle);
     int   TrouverPlusPetiteCle();
+    int   TrouverPlusGrandeCle();
 
     //~Arbre();
 
