@@ -21,8 +21,7 @@ private:
     Noeud*  GetNoeudPrivee(int cle, Noeud* Ptr);
     int     TrouverPlusPetiteClePrivee(Noeud* Ptr);
     int     TrouverPlusGrandeClePrivee(Noeud* Ptr);
-    int     Mirror(Noeud* Ptr);
-
+    Noeud*  deleteNodeP(Noeud* root, int k);
 
 public:
     Arbre();
@@ -34,8 +33,7 @@ public:
     void  AfficherEnfants(int cle);
     int   TrouverPlusPetiteCle();
     int   TrouverPlusGrandeCle();
-    void  InverserArbre();
-
+    void deleteNode(int k);
     //~Arbre();
 
 

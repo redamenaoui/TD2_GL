@@ -150,25 +150,50 @@ int Arbre::TrouverPlusGrandeClePrivee(Noeud* Ptr){
     }
 }
 
-int Arbre:: Mirror(Noeud* Ptr)
-{
-    if (Ptr == NULL)
-        return -999;
+void Arbre::deleteNode(int key){
+    deleteNodeP(root,key);
+}
+Arbre::Noeud* Arbre::deleteNodeP(Noeud* root, int key) {
+    // base case
+    if (root == NULL) return root;
+
+    // If the key to be deleted is smaller than the root's key,
+    // then it lies in left subtree
+    if (key < root->cle)
+        root->gauche = deleteNodeP(root->gauche, key);
+
+    // If the key to be deleted is greater than the root's key,
+    // then it lies in right subtree
+    else if (key > root->cle)
+        root->droite = deleteNodeP(root->droite, key);
+
+    // if key is same as root's key, then This is the node
+    // to be deleted
     else
     {
-        Noeud* temp;
+        // node with only one child or no child
+        if (root->gauche == NULL)
+        {
+            struct Noeud *temp = root->droite;
+            free(root);
+            return temp;
+        }
+        else if (root->droite == NULL)
+        {
+            struct Noeud *temp = root->gauche;
+            free(root);
+            return temp;
+        }
 
-        /* do the subtrees */
-        Mirror(Ptr->gauche);
-        Mirror(Ptr->droite);
+        // node with two children: Get the inorder successor (smallest
+        // in the right subtree)
+        struct Noeud* temp = GetNoeud(TrouverPlusPetiteClePrivee(root->droite));
 
-        /* swap the pointers in this node */
-        temp     = Ptr->gauche;
-        Ptr->gauche = Ptr->droite;
-        Ptr->droite= temp;
+        // Copy the inorder successor's content to this node
+        root->cle = temp->cle;
+
+        // Delete the inorder successor
+        root->droite = deleteNodeP(root->droite, temp->cle);
     }
+    return root;
 }
-void  Arbre::InverserArbre(){
-       Mirror(root);
-}
-
