@@ -21,6 +21,7 @@ private:
     Noeud*  GetNoeudPrivee(int cle, Noeud* Ptr);
     int     TrouverPlusPetiteClePrivee(Noeud* Ptr);
     int     TrouverPlusGrandeClePrivee(Noeud* Ptr);
+    int     Mirror(Noeud* Ptr);
 
 
 public:
@@ -33,7 +34,7 @@ public:
     void  AfficherEnfants(int cle);
     int   TrouverPlusPetiteCle();
     int   TrouverPlusGrandeCle();
-    void RenverserArbre(Arbre arbre);
+    void  InverserArbre();
 
     //~Arbre();
 
