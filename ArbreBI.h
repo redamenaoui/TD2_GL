@@ -33,6 +33,7 @@ public:
     void  AfficherEnfants(int cle);
     int   TrouverPlusPetiteCle();
     int   TrouverPlusGrandeCle();
+    void RenverserArbre(Arbre arbre);
 
     //~Arbre();
 

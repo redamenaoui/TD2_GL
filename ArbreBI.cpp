@@ -149,3 +149,18 @@ int Arbre::TrouverPlusGrandeClePrivee(Noeud* Ptr){
         }
     }
 }
+void Arbre::RecupererCle(){
+    if (root==NULL){
+        cout << "l arbre est vide.... \n" ;
+        return -999;
+
+    }
+}
+void Arbre::RenverserArbre(Arbre arbre){
+    //recuperer les clés de chaque noeud
+    //multiplie par -1
+    //construit l arbre
+    //modifie les valeur en gardant la même structure
+}
+
+
